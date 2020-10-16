@@ -1,6 +1,9 @@
+/* Page Entries*/
 body { 
     background-color: #424549; 
     color: white;
+    padding:0;
+    margin:0;
     font-family: "Trebuchet MS";
     font-size: 100%;
     text-shadow: -1px 1px 2px #000,
@@ -8,9 +11,46 @@ body {
     1px -1px 0 #000,
     -1px -1px 0 #000;
 }
+div.page {
+    height:100vh;
+    display:grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 10fr 20px;
+    grid-template-areas: 'header content' 'menu content' 'footer footer';
+}
+div.header {
+    background-color: #53565A;
+    border: 1px solid black;
+    grid-area:header;
+}
+div.menu {
+    background-color: aquamarine;
+    grid-area:menu;
+}
+div.content{
+    background-color: blanchedalmond;
+    grid-area:content;
+}
+div.footer {
+    background-color: crimson;
+    grid-area:footer;
+}
+
+@media only screen and (max-width: 600px) {
+    div.page {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 9fr 20px;
+    grid-template-areas: 'header' 'menu' 'content' 'footer';
+    }
+}
+
+/*Text Entries*/
 .Big {
     font-weight: bold;
     font-size: 2.5em;
+}
+.HeaderText {
+    float:left;
 }
 a:link {
     color: orange;
@@ -33,7 +73,11 @@ a:active {
     text-decoration: underline;
 }
 
-/*Fade funksjon*/
+/*Image Entries*/
+img {
+    border: 3px solid black;
+  }
+/*Fade Entries*/
 .fade-in {
     animation: fadeIn ease 10s;
     -webkit-animation: fadeIn ease 10s;
