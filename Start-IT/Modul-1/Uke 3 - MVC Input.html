@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        // model
+        var borderColor = "red";
+        var borderSize = 5;
+        var borderRadius = 0;
+
+        var boxColor = "green";
+        var boxHeight = 50;
+        var boxWidth = 50;
+
+        // view
+        updateView();
+        function updateView() {
+            document.getElementById('app').innerHTML = `
+                Choose the color for your box <br/>
+                <input 
+                    type="text" 
+                    oninput="boxColor = this.value; updateBox()"
+                    value="${boxColor || ''}"
+                />
+                <br/>
+
+                Choose the height of the box <br/>
+                <input 
+                    type="range" 
+                    min="5" 
+                    max="500" 
+                    step="5" 
+                    value="${boxHeight || 50}"
+                    oninput="boxHeight = this.value; updateBox()"                    
+                /><br/>
+
+                Choose the width of the box <br/>
+                <input 
+                    type="range" 
+                    min="5" 
+                    max="500" 
+                    step="5" 
+                    value="${boxWidth || 50}"
+                    oninput="boxWidth = this.value; updateBox()"                    
+                /><br/>
+
+                Choose the color for your border <br/>
+                <input 
+                    type="text" 
+                    oninput="borderColor = this.value; updateBox()"
+                    value="${borderColor || ''}"
+                />
+                <br/>
+
+                Choose the thickness of the border <br/>
+                <input 
+                    type="range" 
+                    min="0" 
+                    max="25" 
+                    step="1" 
+                    value="${borderSize || 5}"
+                    oninput="borderSize = this.value; updateBox()"                    
+                /><br/>
+
+                Choose the curve of the border <br/>
+                <input 
+                    type="range" 
+                    min="0" 
+                    max="25" 
+                    step="1" 
+                    value="${borderRadius || 0}"
+                    oninput="borderRadius = this.value; updateBox();"                    
+                /><br/>
+
+                Here is your box <br/>
+                <div id="boxResult"></div>
+                <div id="box"></div>
+            `
+        }
+        var boxDisplay = document.getElementById('box');
+        var boxHTMLDisplay = document.getElementById('boxResult');
+        updateBox()
+        function updateBox() {
+            boxDisplay.innerHTML = '<div style="'
+                + 'background-color: ' + boxColor + ';'
+                + 'height: ' + boxHeight + 'px;'
+                + 'width: ' + boxWidth + 'px;'
+                + 'border-style: solid;'
+                + 'border-color: ' + borderColor + ';'
+                + 'border-width: ' + borderSize + 'px;'
+                + 'border-radius: ' + borderRadius + 'px;'
+                + '">' +
+                '</div>';
+            boxHTMLDisplay.innerText = boxDisplay.innerHTML;
+        }
+    </script>
+</body>
+
+</html>

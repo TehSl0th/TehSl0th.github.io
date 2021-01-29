@@ -16,7 +16,7 @@ div.page {
     display:grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr 10fr 20px;
-    grid-template-areas: 'header content' 'menu content' 'footer footer';
+    grid-template-areas: 'header menu' 'content content' 'footer footer';
 }
 div.header {
     background-color: #2c2f33;
@@ -41,9 +41,15 @@ div.footer {
 
 @media only screen and (max-width: 600px) {
     div.page {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 9fr 20px;
-    grid-template-areas: 'header' 'menu' 'content' 'footer';
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 9fr 20px;
+        grid-template-areas: 'header' 'menu' 'content' 'footer';
+    }
+    .menubutton {
+        width: 1vh;
+        height: 5vh;
+        padding: 2px 4px;
+        float: left;
     }
 }
 
@@ -81,26 +87,55 @@ a:active {
 }
 
 /*Button Entries*/
-.menubutton {
-    background-color: #FFAD00;
-    border: 1px solid #000000;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: "Trebuchet MS";
-    font-size: 100%;
-    text-shadow: -1px 1px 2px #000,
-    1px 1px 2px #000,
-    1px -1px 0 #000,
-    -1px -1px 0 #000;
-    width: 100%;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
-
-/*Image Entries*/
-img {
-    border: 3px solid #000000;
+  
+li {
+    float: left;
+}
+  
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+  
+li.dropdown {
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+  
+.dropdown-content a:hover {background-color: #f1f1f1;}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /*Fade Entries*/

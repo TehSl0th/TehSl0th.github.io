@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script>
+        // model
+        let selectedColor = 'black';
+        let foregroundColor = 'white';
+
+        // view
+        updateView();
+        function updateView() {
+            document.getElementById('app').innerHTML = `
+            <select name="Colors" onchange="selectedColor = this.value; updateBox()" id="colors">
+            <option value="black">Black</option>
+            <option value="darkblue">Dark Blue</option>
+            <option value="lightgrey">Light Grey</option>
+            <option value="lightgreen">Light Green</option>
+            <option value="lightcoral">Light Red</option>
+            </select>
+            <div id="colorbox"></div>
+            `;
+        }
+
+        // controller
+        let colorBoxDisplay = document.getElementById('colorbox');
+        updateBox()
+        function updateBox() {
+            if (selectedColor == 'black' || selectedColor == 'darkblue') {
+                foregroundColor = 'white';
+            } else {
+                foregroundColor = 'black';
+            }
+            colorBoxDisplay.innerHTML = '<div style="'
+                + 'background-color: ' + selectedColor + ';'
+                + 'color: ' + foregroundColor + ';'
+                + 'height: 200px;'
+                + 'width: 500px;'
+                + 'padding: 50px;'
+                + 'border-style: solid;'
+                + 'border-width: 5px;'
+                + 'border-radius: 5px;'
+                + '">'
+                + "Here you have a box that changes background and foreground color."
+                + '</div>';
+        }
+    </script>
+</body>
+
+</html>

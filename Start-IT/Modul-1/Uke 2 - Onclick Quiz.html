@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            float: left;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-size: 30px;
+            font-weight: bold;
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Når ble GET Academy AS startet?</h1>
+    <h1>A: 2016</h1>
+    <h1>B: 1998</h1>
+    <h1>C: 2004</h1>
+    <h1>D: 2010</h1>
+    <br>
+    <p id="S1S1" onclick="doS1S1()">A</p>
+    <p id="S1S2" onclick="doS1S2()">B</p>
+    <p id="S1S3" onclick="doS1S3()">C</p>
+    <p id="S1S4" onclick="doS1S4()">D</p>
+
+    <script>
+        function doS1S1() {
+            document.getElementById('S1S1').innerHTML = 'RIKTIG';
+            document.getElementById("S1S1").style.color="Green";
+        }
+        function doS1S2() {
+            document.getElementById('S1S2').innerHTML = 'FEIL';
+            document.getElementById("S1S2").style.color="Red";
+        }
+        function doS1S3() {
+            document.getElementById('S1S3').innerHTML = 'FEIL';
+            document.getElementById("S1S3").style.color="Red";
+        }
+        function doS1S4() {
+            document.getElementById('S1S4').innerHTML = 'FEIL';
+            document.getElementById("S1S4").style.color="Red";
+        }
+    </script>
+
+</body>
+
+</html>

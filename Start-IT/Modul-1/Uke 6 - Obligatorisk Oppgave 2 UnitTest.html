@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Obligatorisk Oppgave 2: Unit Test</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css">
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+    <script src="Oblig2.js"></script>
+    <script>
+        function show(){
+
+        }
+
+        let numbers;
+        let chosenBar;
+
+        QUnit.test("Velge Stolpe - Samme", function (assert) {
+            chosenBar = 2;
+            const actual = selectBar(2);
+            const expected = null;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Velge Stolpe - Ny", function (assert) {
+            selectBar(6);
+            selectBar(2);
+            const actual = chosenBar;
+            const expected = 2;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Slette en Stolpe", function (assert) {
+            numbers = [2, 4, 6];
+            chosenBar = 1;
+            deleteBar();
+            const actual = numbers;
+            const expected = [2, 6];
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Endre en Stolpe", function (assert) {
+            numbers = [6, 4, 2];
+            chosenBar = 1;
+            inputValue = 8
+            editBar();
+            const actual = numbers;
+            const expected = [6, 8, 2];
+            assert.deepEqual(actual, expected);
+        });
+
+        QUnit.test("Legge til en Stolpe", function (assert) {
+            numbers = [8, 6, 4];
+            inputValue = 2
+            addBar();
+            const actual = numbers;
+            const expected = [8, 6, 4, 2];
+            assert.deepEqual(actual, expected);
+        });
+    </script>
+</body>
+
+</html>

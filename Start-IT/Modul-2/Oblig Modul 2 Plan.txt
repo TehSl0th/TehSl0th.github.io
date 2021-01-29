@@ -1,0 +1,8 @@
+CYOA (Choose your own adventure) Spill: Dungeon Crawler
+
+Innhold:
+
+- Startside hvor du setter inn navn til din karakter og startknapp (Variabel som endrer tekst)
+- Hovedside hvor du har en tab på siden som har ditt navn, liv og andre ting og resten er hvor tekst dukker opp og hvor du kan trykke på ting som skal skje.
+- Et inventar system hvor spilleren kan see hva slags ting de har som blir brukt gjennom eventyret. Ting vil bli lagt til, byttet ut og fjernet. (Objekt)
+- Enten skal eventyret være generert med random-math for et unikt eventyr for hver gang eller et statisk eventyr du kan gå igjennom.

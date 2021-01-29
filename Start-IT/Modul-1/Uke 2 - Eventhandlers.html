@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="testOnLoad()">
+    <ponmouseover="testOnMouseOver()" onmouseout="testOnMouseOut()" OnDblclick="testondblclick()">Ferdighet 2a - Alternative eventhandlere: onchange osv.</p>
+    <input type="text" onchange="testOnChange()" oninput="testOnInput()" onkeydown="testOnKeyDown()"/>
+    <h3 onmouseover="testOnMouseOver()" onmouseout="testOnMouseOut()" OnDblclick="testondblclick()" oncontextmenu="testOnContextMenu()">Test test test</h3>
+
+    <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">Mer informasjon her</a>
+    <script>
+        function testOnLoad() {
+            console.log('OnLoad');
+        }
+
+        function testOnChange() {
+            console.log('OnChange');
+        }
+
+        function testOnInput() {
+            console.log('OnInput');
+        }
+
+        function testOnMouseOver() {
+            console.log('OnMouseOver');
+        }
+
+        function testOnMouseOut() {
+            console.log('OnMouseOut');
+        }
+        function testondblclick() {
+            console.log('OnDblclick');
+        }
+        function testOnContextMenu () {
+            console.log('OnContextMenu');
+        }
+        function testOnKeyDown () {
+            console.log('OnKeyDown');
+        }
+    </script>
+</body>
+
+</html>

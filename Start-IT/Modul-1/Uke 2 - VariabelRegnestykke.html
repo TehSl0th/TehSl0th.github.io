@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+    <p>Ferdighet 7 - Sette variabel til resultat av et regnestykke. </p>
+    <input id="tallA" type="range" min="1" max="1000" step="1" oninput="calculate()" value="100" />
+    <input id="tallB" type="range" min="1" max="1000" step="1" oninput="calculate()" value="100" />
+    <div id="resultat"></div>
+    <div id="box"></div>
+    <script>
+        var resultatDiv = document.getElementById('resultat');
+        var boxDiv = document.getElementById('box');
+        var tallAInput = document.getElementById('tallA');
+        var tallBInput = document.getElementById('tallB');
+
+        calculate();
+
+        function calculate() {
+            var tallA = parseInt(tallAInput.value);
+            var tallB = parseInt(tallBInput.value);
+            var areal = tallA * tallB;
+            var omkretsen = 2* tallA + 2* tallB;
+            resultatDiv.innerHTML = '' +
+                tallA + '*' + tallB + '=' + areal + '<br/>' +
+                tallA + '+' + tallB + '=' + omkretsen;
+
+            boxDiv.innerHTML = '<div style="'
+                + 'background-color: ' + 'red' + ';'
+                + 'width: ' + tallA + 'px;'
+                + 'height: ' + tallB + 'px;'
+                + '">' + 'arealet:' + areal + '<br/>' + 'omkretsen:' + omkretsen; '</div>';
+        }
+    </script>
+</body>
+
+</html>

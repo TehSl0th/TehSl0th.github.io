@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
 </head>
+
 <body>
     <div class="page">
         <div class="header">
-            <img class="HeaderImage" src="https://cdn.discordapp.com/avatars/176761194474897408/a21852b0a1ec6711072bcbdf112be2a2.png" alt="Discord" >
+            <img class="HeaderImage"
+                src="https://cdn.discordapp.com/avatars/176761194474897408/a21852b0a1ec6711072bcbdf112be2a2.png"
+                alt="Discord">
             <p class="HeaderText">Discord tag: Sl0th#1337</p>
             <p class="HeaderText"><a href="https://steamcommunity.com/id/the_sl0th">Steam Community</a></p>
         </div>
         <div class="menu">
-            <button type="button" class="menubutton">Click Me!</button>
-            <button type="button" class="menubutton">Click Me!</button>
-            <button type="button" class="menubutton">Click Me!</button>
-            <button type="button" class="menubutton">Click Me!</button>
-            <button type="button" class="menubutton">Click Me!</button>
-            <button type="button" class="menubutton">Click Me!</button>
-            <button type="button" class="menubutton">Click Me!</button>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li class="dropdown">
+                  <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+                  <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                  </div>
+                </li>
+              </ul>
         </div>
         <div class="content">Content</div>
         <div class="footer">
@@ -28,4 +37,5 @@
         </div>
     </div>
 </body>
+
 </html>

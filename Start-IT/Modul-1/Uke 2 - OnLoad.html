@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <img onload="ImageLoad()"
+        src="https://photos.smugmug.com/Military/Military-Museum-in-Verkhnyaya-Pyshma-Part-2/i-q4Fq3St/0/80607631/X3/PyshmaMilMuseumPart2-019-X3.jpg">
+    <h1 id="a"></h1>
+    <h1 id="b"></h1>
+
+    <script>
+
+        document.getElementById('a').innerHTML = 'Image started loading at ' + new Date().toTimeString();
+
+        function ImageLoad() {
+            document.getElementById('b').innerHTML = 'Image finished loading at ' + new Date().toTimeString();
+        }
+    </script>
+
+</body>
+
+</html>

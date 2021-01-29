@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #CodeLockBody {
+            border: 2px solid black;
+            width: 600px;
+            height: 800px;
+            padding: 0px;
+            margin: 0px;
+            background-color: red;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+            grid-template-areas:    'CodeLockScreen CodeLockScreen CodeLockScreen'
+                                    'CodeLockButton1 CodeLockButton2 CodeLockButton3'
+                                    'CodeLockButton4 CodeLockButton5 CodeLockButton6'
+                                    'CodeLockButton7 CodeLockButton8 CodeLockButton9'
+                                    'CodeLockReset CodeLockButton0 CodeLockEnter';
+        }
+
+        #CodeLockScreen {
+            text-align: right;
+            background-color: green;
+            width: 100%;
+        }
+
+        .CodeLockButton {
+            margin: 0px;
+            width: 100%;
+            border: 2px solid black;
+            text-align: center;
+            background-color: blue;
+        }
+
+        #CodeLockButton1 {
+            grid-area: CodeLockButton1;
+        }
+
+        #CodeLockButton2 {
+            grid-area: CodeLockButton2;
+        }
+
+        #CodeLockButton3 {
+            grid-area: CodeLockButton3;
+        }
+
+        #CodeLockButton4 {
+            grid-area: CodeLockButton4;
+        }
+
+        #CodeLockButton5 {
+            grid-area: CodeLockButton5;
+        }
+
+        #CodeLockButton6 {
+            grid-area: CodeLockButton6;
+        }
+
+        #CodeLockButton7 {
+            grid-area: CodeLockButton7;
+        }
+
+        #CodeLockButton8 {
+            grid-area: CodeLockButton8;
+        }
+
+        #CodeLockButton9 {
+            grid-area: CodeLockButton9;
+        }
+
+        #CodeLockReset {
+            grid-area: CodeLockReset;
+        }
+
+        #CodeLockButton0 {
+            grid-area: CodeLockButton0;
+        }
+
+        #CodeLockEnter {
+            grid-area: CodeLockEnter;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="CodeLockBody">
+        <div id="CodeLockScreen">1234</div>
+        <div class="CodeLockButton" id="CodeLockButton1">1</div>
+        <div class="CodeLockButton" id="CodeLockButton2">2</div>
+        <div class="CodeLockButton" id="CodeLockButton3">3</div>
+        <div class="CodeLockButton" id="CodeLockButton4">4</div>
+        <div class="CodeLockButton" id="CodeLockButton5">5</div>
+        <div class="CodeLockButton" id="CodeLockButton6">6</div>
+        <div class="CodeLockButton" id="CodeLockButton7">7</div>
+        <div class="CodeLockButton" id="CodeLockButton8">8</div>
+        <div class="CodeLockButton" id="CodeLockButton9">9</div>
+        <div class="CodeLockButton" id="CodeLockReset">X</div>
+        <div class="CodeLockButton" id="CodeLockButton0">0</div>
+        <div class="CodeLockButton" id="CodeLockEnter">O</div>
+    </div>
+
+</body>
+
+</html>

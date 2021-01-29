@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        // model
+
+        let pizzaSize = '';
+        let pizzaTopping = '';
+        let pizzaThickness = '';
+
+        let app = document.getElementById('app');
+
+        // view
+        updateView();
+        function updateView() {
+            app.innerHTML = `
+                <p>Ferdighet 9f - Valgsetninger - Sammenligne flere ting på en gang (og og eller sammen)</p>
+                <h3>Pizza-bestilling</h3>
+                <div id="info" style="padding-bottom: 20px;">Gjør ett valg på hver linje:</div>
+
+                Bunn: <input id="tykkBunn" type="radio" name="bunn" onchange="info(); pizzaThickness = this.id;" />Tykk
+                <input id="tynnBunn" type="radio" name="bunn" onchange="info(); pizzaThickness = this.id;" />Tynn <br />
+
+                Fyll: <input id="fyllTaco" type="radio" name="fyll" onchange="info(); pizzaTopping = this.id;" />Taco
+                <input id="fyllKylling" type="radio" name="fyll" onchange="info(); pizzaTopping = this.id;" />Kylling
+                <input id="fyllPepperoni" type="radio" name="fyll" onchange="info(); pizzaTopping = this.id;" />Pepperoni<br />
+
+                Størrelse: <input id="stor" type="radio" name="str" onchange="info(); pizzaSize = this.id;" />Stor
+                <input id="middels" type="radio" name="str" onchange="info(); pizzaSize = this.id;" />Middels
+                <input id="liten" type="radio" name="str" onchange="info(); pizzaSize = this.id;" />Liten<br />
+
+                <button id="bestill" disabled="" onclick="alert('Bestilt!');">Bestill</button>
+                <ul>
+                    <li>Oppgave: Legg til et fyll til</li>
+                    <li>Oppgave: Legg til en ting til i pizza-bestillingen, for eksempel firkantet eller rund pizza</li>
+                </ul>
+            `;
+        }
+
+        // controller
+
+        function info() {
+            updateView();
+            if ((!pizzaThickness = '') &&
+                (fyllTaco.checked || fyllKylling.checked || fyllPepperoni.checked) &&
+                (strStor.checked || strMiddels.checked || strLiten.checked)) {
+                infoDiv.innerHTML = 'Du har fylt ut alt og er klar til å bestille!';
+                btnBestill.disabled = false;
+            } else {
+                infoDiv.innerHTML = 'Du har ikke valgt:';
+
+                if (!bunnTykk.checked && !bunnTynn.checked) {
+                    infoDiv.innerHTML += '<li>bunn</li>';
+                }
+                if (!fyllTaco.checked && !fyllKylling.checked && !fyllPepperoni.checked) {
+                    infoDiv.innerHTML += '<li>fyll</li>';
+                }
+                if (!strStor.checked && !strMiddels.checked && !strLiten.checked) {
+                    infoDiv.innerHTML += '<li>størrelse</li>';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
