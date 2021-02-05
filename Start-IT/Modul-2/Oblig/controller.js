@@ -1,4 +1,4 @@
-function temporaryPlayerName(name) {
+function gamePlayerNameChange(name) {
     model.player.name = name;
 }
 
@@ -36,7 +36,7 @@ function gameItemAdd(item,count) {
 
 function gameItemCleanup() {
     for (let i = model.player.inventory.length - 1; i >= 0; --i) {
-    if (model.player.inventory[i].count > 0) {
+    if (model.player.inventory[i].count < 1) {
         model.player.inventory.splice(i,1);}
     }
 }

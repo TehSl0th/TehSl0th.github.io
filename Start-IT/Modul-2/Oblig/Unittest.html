@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Obligatorisk Oppgave 1 - Modul 2</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css">
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+    <script src="controller.js"></script>
+    <script>
+
+        QUnit.test("Model - Slette", function (assert) {
+            model = {
+                player: {
+                    inventory: [ {item: "Torch", count: 0}, {item: "Ration", count: 3}, {item: "Rope", count: 0} ]
+                }
+            };
+            gameItemCleanup();
+            const actual = model;
+            const expected = {
+                player: {
+                    inventory: [ {item: "Ration", count: 3} ]
+                }
+            };
+            assert.deepEqual(actual, expected);
+        });
+
+        QUnit.test("Model - Legge til objekt", function (assert) {
+            model = {
+                player: {
+                    inventory: [ {item: "Ration", count: 3} ]
+                }
+            };
+            gameItemAdd('Pebble',10);
+            const actual = model;
+            const expected = {
+                player: {
+                    inventory: [ {item: "Ration", count: 3}, {item: "Pebble", count: 10}]
+                }
+            };
+            assert.deepEqual(actual, expected);
+        });
+        
+        QUnit.test("Model - Endre objekt", function (assert) {
+            model = {
+                player: {
+                    inventory: [ {item: "Ration", count: 3}, {item: "Pebble", count: 10}]
+                }
+            };
+            gameItemAdd('Pebble',-5);
+            const actual = model;
+            const expected = {
+                player: {
+                    inventory: [ {item: "Ration", count: 3}, {item: "Pebble", count: 5}]
+                }
+            };
+            assert.deepEqual(actual, expected);
+        });
+        
+    </script>
+</body>
+
+</html>

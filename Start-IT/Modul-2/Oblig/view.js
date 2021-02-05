@@ -13,7 +13,7 @@ function viewMenu() {
         <div id="gameMenu">
             <div id="gameMenuTitle">Game Title</div>
             <div id="gameMenuText">Name your character</div>
-            <input type="text" id="gameMenuInput" onchange="temporaryPlayerName(this.value)" value="" placeholder="Hero"/>
+            <input type="text" id="gameMenuInput" onchange="temporaryPlayerName(this.value)" value="" placeholder="${model.player.name}"/>
             <div id="gameMenuButton" onclick="viewGame()">Click Me</div>
         </div>
     `;
@@ -30,7 +30,7 @@ function viewGame() {
             </div>
 
             <div id="gameMainPage">
-                <h1>The beggining of a new adventure, your name; ${model.player.name}</h1>
+                <h1>This is just the beggining of a new adventure, ${model.player.name}</h1>
                 <input type="button" onclick="viewGameTestItem()" value="Test Page: Item">
                 <input type="button" onclick="viewGameTestShop()" value="Test Page: Shop">
             </div>
@@ -49,11 +49,12 @@ function viewGameTestItem() {
             </div>
 
             <div id="gameMainPage">
-                <h1>Hello ${model.player.name}, here you can test out item functions</h1>
+                <h1>Hello ${model.player.name}, here you can test out item functions.</h1>
                 <input type="button" onclick="gameItemAdd('Torch', 1)" value="Pick up Torch">
                 <input type="button" onclick="gameItemAdd()" value="Use up Torch">
                 <input type="button" onclick="gameCalcGoldAdd(), viewGameTestItem()" value="Give Gold">
-                <input type="button" onclick="gameCalcGoldRemove(), viewGameTestItem()" value="Remove Gold">               
+                <input type="button" onclick="gameCalcGoldRemove(), viewGameTestItem()" value="Remove Gold">
+                <input type="text" onchange="gamePlayerNameChange(this.value)" value="" placeholder="${model.player.name}"/>               
             </div>
         </div>
     `;
@@ -69,7 +70,7 @@ function viewGameTestShop() {
             </div>
 
             <div id="gameMainPage">
-                <h1>The beggining of a new adventure, your name is ${model.player.name}</h1>
+                <h1>The beggining of a new adventure, your name is ${model.player.name}. There is nothing here, not yet atleast.</h1>
             </div>
         </div>
     `;
