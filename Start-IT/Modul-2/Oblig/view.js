@@ -1,4 +1,4 @@
-viewPlay();
+viewMenu();
 
 function viewPlay() {
     document.getElementById('app').innerHTML = `
@@ -14,7 +14,7 @@ function viewMenu() {
             <div id="gameMenuTitle">Game Title</div>
             <div id="gameMenuText">Name your character</div>
             <input type="text" id="gameMenuInput" onchange="temporaryPlayerName(this.value)" value="" placeholder="${model.player.name}"/>
-            <div id="gameMenuButton" onclick="viewGame()">Click Me</div>
+            <div id="gameMenuButton" onclick="viewGame(), sndStopMenu()">Click Me</div>
         </div>
     `;
 }

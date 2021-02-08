@@ -41,5 +41,15 @@ function gameItemCleanup() {
     }
 }
 
-function gameItemTorchAdd() {}
-function gameItemTorchRemove() {}
+var sound = new Howl({
+    src: ['snd/main_menu.mp3'],
+    autoplay: true,
+    loop: true,
+    volume: 0.5,
+});
+
+function sndStopMenu() {
+    sound.autoplay = false;
+    sound.loop = false;
+    sound.fade(0.5, 0, 1000);
+}

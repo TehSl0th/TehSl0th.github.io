@@ -9,3 +9,13 @@ Thersese representer IT eller ET.
 - Kunne slette og redigere bestillinger.
 - Ingen behov for logføring i førsteomgang.
 - Enkelt som mulig, lett og oversiketelig. Simpelt.
+
+
+
+- Kunne velge flere bord
+- Kunne legge til flere bord
+- Kommentar til booking, som for eksemple hvis det er en bursdag eller sånt.
+- Response på at du har reservert, som en popup, animasjon eller noe.
+- Graph på å se hvor mye gjester det har vært i en uke, måned og år, for å see om det går bra eller dårlig i resturangen.
+- Kunne endre bord oppsett på en side, for å lage et 8-man bord eller slå sammen bord.
+

@@ -65,7 +65,7 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url(main_screen.png);
+    background-image: url(gfx/main_screen.png);
     width: 100%;
     height: 100%;
     -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
