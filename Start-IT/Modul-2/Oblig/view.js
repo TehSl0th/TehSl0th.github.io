@@ -51,7 +51,7 @@ function viewGameTestItem() {
             <div id="gameMainPage">
                 <h1>Hello ${model.player.name}, here you can test out item functions.</h1>
                 <input type="button" onclick="gameItemAdd('Torch', 1)" value="Pick up Torch">
-                <input type="button" onclick="gameItemAdd()" value="Use up Torch">
+                <input type="button" onclick="gameItemAdd('Torch', -1)" value="Use up Torch">
                 <input type="button" onclick="gameCalcGoldAdd(), viewGameTestItem()" value="Give Gold">
                 <input type="button" onclick="gameCalcGoldRemove(), viewGameTestItem()" value="Remove Gold">
                 <input type="text" onchange="gamePlayerNameChange(this.value)" value="" placeholder="${model.player.name}"/>               
@@ -71,6 +71,23 @@ function viewGameTestShop() {
 
             <div id="gameMainPage">
                 <h1>The beggining of a new adventure, your name is ${model.player.name}. There is nothing here, not yet atleast.</h1>
+            </div>
+        </div>
+    `;
+}
+
+function viewGameTestActions() {
+    document.getElementById('app').innerHTML = `
+        <div id="gameMain">
+            <div id="gameMainSidebar">
+                <h2>Name: ${model.player.name}</h2>
+                <h2>Gold: ${model.player.gold}</h2>
+                <button onclick="gameDrawInventory()">Inventory</button>
+                <div> ${model.showInventory}</div>
+            </div>
+
+            <div id="gameMainPage">
+                <div>The world around you slowly fades into your concousness.</div>
             </div>
         </div>
     `;

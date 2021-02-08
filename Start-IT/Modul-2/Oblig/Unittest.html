@@ -12,57 +12,60 @@
     <div id="qunit"></div>
     <div id="qunit-fixture"></div>
     <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+    <script src="model.js"></script>
     <script src="controller.js"></script>
     <script>
 
         QUnit.test("Model - Slette", function (assert) {
-            model = {
-                player: {
-                    inventory: [ {item: "Torch", count: 0}, {item: "Ration", count: 3}, {item: "Rope", count: 0} ]
-                }
-            };
+            model.player.inventory[0].count = 0;
+            let lengdePåInventory1 = model.player.inventory.length;
             gameItemCleanup();
-            const actual = model;
-            const expected = {
-                player: {
-                    inventory: [ {item: "Ration", count: 3} ]
-                }
-            };
-            assert.deepEqual(actual, expected);
+            const actual = model.player.inventory.length
+            const expected = lengdePåInventory1-1;
+            assert.equal(actual, expected);
         });
 
         QUnit.test("Model - Legge til objekt", function (assert) {
-            model = {
-                player: {
-                    inventory: [ {item: "Ration", count: 3} ]
-                }
-            };
             gameItemAdd('Pebble',10);
-            const actual = model;
-            const expected = {
-                player: {
-                    inventory: [ {item: "Ration", count: 3}, {item: "Pebble", count: 10}]
-                }
-            };
+            let index = model.player.inventory.length-1
+            let lagtTilObjekt = model.player.inventory[index];
+            const actual = lagtTilObjekt;
+            const expected = {item: "Pebble", count: 10};
             assert.deepEqual(actual, expected);
         });
         
         QUnit.test("Model - Endre objekt", function (assert) {
-            model = {
-                player: {
-                    inventory: [ {item: "Ration", count: 3}, {item: "Pebble", count: 10}]
-                }
-            };
             gameItemAdd('Pebble',-5);
-            const actual = model;
-            const expected = {
-                player: {
-                    inventory: [ {item: "Ration", count: 3}, {item: "Pebble", count: 5}]
-                }
-            };
+            let index = model.player.inventory.length-1
+            let endrePåObjekt = model.player.inventory[index];
+            const actual = endrePåObjekt;
+            const expected = {item: "Pebble", count: 5};
             assert.deepEqual(actual, expected);
         });
         
+        QUnit.test("Legge til penger", function (assert) {
+            let harLagtTil = false
+            if (gameCalcGoldAdd() > 0) {harLagtTil = true}
+            const actual = harLagtTil; 
+            const expected = model.player.gold > 0;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Trekk fra penger - Ugyldig verdi", function (assert) {
+            model.player.gold = 0;
+            gameCalcGoldRemove();
+            const actual = model.player.gold; 
+            const expected = 0;
+            assert.equal(actual, expected, "Hva som helst");
+        });
+
+        QUnit.test("Legg til item - Ugyldig verdi", function (assert) {
+            let lengdePåInventory = model.player.inventory.lenght;
+            gameItemAdd('Leaf',2);
+            const actual = lengdePåInventory; 
+            const expected = model.player.inventory.lenght;
+            assert.equal(actual, expected, "Hva som helst");
+        });
     </script>
 </body>
 
